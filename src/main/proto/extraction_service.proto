@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package com.example.grpc.scraper.proto;
+
+option java_multiple_files = true;
+option java_package = "com.example.grpc.scraper.proto";
+
+
+message ExtractionRequest {
+  int64 orgId = 1;
+  string company = 2;
+  string paramJson = 3;
+}
+
+message ExtractionResponse {
+  int64 orgId = 1;
+  string company = 2;
+  repeated JobDetails jobDetails = 3;
+}
+
+message JobDetails {
+    string jobTitle = 1;
+}
+
+service ExtractionService {
+  rpc extractOrgJobs (ExtractionRequest) returns (stream ExtractionResponse);
+}
