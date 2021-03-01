@@ -21,7 +21,7 @@ import java.util.concurrent.TimeUnit;
 @GRpcService
 public class ExtractionServiceImpl extends ExtractionServiceGrpc.ExtractionServiceImplBase {
 
-    String URL = "https://careers.glosstech.io/";
+    String URL = "https://jobs.gohire.io/shri-educare-limited-o9lf3xun/";
 
     @Override
     public void extractOrgJobs(ExtractionRequest request, StreamObserver<ExtractionResponse> responseObserver) {
